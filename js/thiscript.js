@@ -24,6 +24,11 @@ var firebaseConfig = {
   var tempo = new Date();
 
   sendMessageButton2.addEventListener("click", e => {
+       document.getElementById("modal-body").innerHTML =
+    '<div class="modal-title">\r'+
+    '<h2 class="text-center">Grazie per esserti registrato!</h2>\r'+
+    '</div>\r'
+    ;
     inputUser.value = nameInput.value +"_"+ tempo.getMonth()+ tempo.getDate()+ tempo.getHours()+tempo.getMinutes()+tempo.getSeconds();  
     path = inputUser.value;
   	database.ref(path).set({
@@ -32,9 +37,9 @@ var firebaseConfig = {
   		phone: phoneInput.value,
   		message: messageInput.value,
   	});
-      document.getElementById("modal-body").innerHTML =
-    '<div class="modal-title">\r'+
-    '<h2 class="text-center">Grazie per esserti registrato!</h2>\r'+
-    '</div>\r'
-    ;
+     console.log("submitted");
+
+    setTimeout(function() {
+      document.getElementById("modal-body").innerHTML = "";
+    },3000);
   });
