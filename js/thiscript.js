@@ -16,12 +16,18 @@ var firebaseConfig = {
   const phoneInput = document.getElementById("phone");
   const messageInput = document.getElementById("message");
 
+  var inputUser = {value: "zzdefault"};
+  var tempo = new Date();
+  inputUser.value = nameInput.value +"_"+ tempo.getMonth()+ tempo.getDate()+ tempo.getHours()+tempo.getMinutes()+tempo.getSeconds();
+
+  path = inputUser.value;
 
 
-text = ""+
-myscript.fbSave("uno", "sendMessageButton2",[["name","email","phone", "message"],
-['nameInput.value','emailInput.value','phoneInput.value', 'messageInput.value']])+
-myscript.variables()+
-myscript.script();
-
-document.getElementById("script").innerHTML = text;
+  sendMessageButton2.addEventListener("click", e => {
+  	database.ref(path).set({
+  		name: nameInput.value,
+  		email: emailInput.value,
+  		phone: phoneInput.value,
+  		message: messageInput.value,
+  	});
+  });
