@@ -18,12 +18,12 @@ var firebaseConfig = {
 
   var inputUser = {value: "zzdefault"};
   var tempo = new Date();
-  inputUser.value = nameInput.value +"_"+ tempo.getMonth()+ tempo.getDate()+ tempo.getHours()+tempo.getMinutes()+tempo.getSeconds();
-
-  path = inputUser.value;
+  
 
 
   sendMessageButton2.addEventListener("click", e => {
+    inputUser.value = nameInput.value +"_"+ tempo.getMonth()+ tempo.getDate()+ tempo.getHours()+tempo.getMinutes()+tempo.getSeconds();  
+    path = inputUser.value;
   	database.ref(path).set({
   		name: nameInput.value,
   		email: emailInput.value,
