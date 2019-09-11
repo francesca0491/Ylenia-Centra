@@ -21,10 +21,6 @@ var firebaseConfig = {
 
   sendMessageButton2.addEventListener("click", e => {
           
-    if (nameInput.value == "") {nameInput.value = "zzdefault";}
-    if (phoneInput.value == "") {phoneInput.value = "zzdefault";}
-    if (messageInput.value == "") {messageInput.value = "zzdefault";}
-    if (emailInput.value == "") {emailInput.value = "zzdefault@zzdefault";}
     inputUser.value = nameInput.value +"_"+ tempo.getMonth()+ tempo.getDate()+ tempo.getHours()+tempo.getMinutes()+tempo.getSeconds();  
     path = inputUser.value;
   	database.ref(path).set({
