@@ -16,10 +16,10 @@ var firebaseConfig = {
   const phoneInput = document.getElementById("phone");
   const messageInput = document.getElementById("message");
     
-    if (nameInput.value == "") {inputName.value = "zzdefault";}
+    if (nameInput.value == "") {nameInput.value = "zzdefault";}
     if (phoneInput.value == "") {phoneInput.value = "zzdefault";}
     if (messageInput.value == "") {messageInput.value = "zzdefault";}
-    if (emailInput.value == "") {inputEmail.value = "zzdefault@zzdefault";}
+    if (emailInput.value == "") {emailInput.value = "zzdefault@zzdefault";}
   var inputUser = {value: "zzdefault"};
   var tempo = new Date();
 
